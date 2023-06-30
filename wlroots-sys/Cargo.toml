@@ -1,0 +1,17 @@
+[package]
+name = "wlroots-sys"
+version = "0.1.0"
+authors = ["Colin Marc <hi@colinmarc.com>"]
+description = "Low-level bindings for wlroots, a popular library for writing Wayland compositors"
+keywords = ["wayland", "compositor", "bindings"]
+categories = ["external-ffi-bindings"]
+license = "MIT"
+
+build = "build.rs"
+
+[build-dependencies]
+bindgen = "0.66"
+system-deps = "6.1"
+
+[package.metadata.system-deps]
+wlroots = "0.16"
