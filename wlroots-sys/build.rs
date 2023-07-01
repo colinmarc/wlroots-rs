@@ -33,8 +33,15 @@ fn main() {
         .header("wlroots.h")
         .clang_arg("-Iwlroots/include")
         .clang_arg(format!("-I{}/include", wlroots_build_path_str))
+        .allowlist_recursively(false)
+        .allowlist_type("_?wlr_.*")
         .allowlist_function("_?wlr_.*")
-        .allowlist_type("_?wlr_.*");
+        .allowlist_var("WLR_.*")
+        .allowlist_type("pixman_.*")
+        .allowlist_type("libseat")
+        .allowlist_type(".*va_list.*")
+        .allowlist_type("wl_output_transform") // Not in wayland-sys, for some reason.
+        .allowlist_type("wl_output_subpixel");
 
     for path in libs.all_include_paths() {
         builder = builder.clang_arg("-I").clang_arg(path.to_str().unwrap());
