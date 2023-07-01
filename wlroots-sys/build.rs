@@ -39,9 +39,9 @@ fn main() {
         .allowlist_var("WLR_.*")
         .allowlist_type("pixman_.*")
         .allowlist_type("libseat")
+        .allowlist_type("xkb_.*")
         .allowlist_type(".*va_list.*")
-        .allowlist_type("wl_output_transform") // Not in wayland-sys, for some reason.
-        .allowlist_type("wl_output_subpixel");
+        .allowlist_file(".*/wayland-server-protocol.h");
 
     for path in libs.all_include_paths() {
         builder = builder.clang_arg("-I").clang_arg(path.to_str().unwrap());

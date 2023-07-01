@@ -21,6 +21,7 @@ wayland-sys = { version = "0.30", features = ["server", "client"] }
 
 [package.metadata.system-deps]
 wayland-server = "1.21"
+wayland-protocols = "1.31"
 libdrm = "2.4"
 hwdata = "0.367"
 pixman-1 = "0.42"
