@@ -148,6 +148,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
 
 [[package]]
+name = "meson-next"
+version = "1.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "40ac6863fae581981cf73dfed0db75d1cde064392ccfca7bd3aa82a4ba9ed2e0"
+
+[[package]]
 name = "minimal-lexical"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -380,5 +386,6 @@ name = "wlroots-sys"
 version = "0.1.0"
 dependencies = [
  "bindgen",
+ "meson-next",
  "system-deps",
 ]
