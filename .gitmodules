@@ -1,3 +1,6 @@
 [submodule "wlroots-sys/wlroots"]
 	path = wlroots-sys/wlroots
 	url = https://gitlab.freedesktop.org/wlroots/wlroots.git
+[submodule "wlroots-codegen/tree-sitter-c"]
+	path = wlroots-codegen/tree-sitter-c
+	url = https://github.com/tree-sitter/tree-sitter-c.git

@@ -33,6 +33,7 @@ fn main() {
         .header("wlroots.h")
         .clang_arg("-Iwlroots/include")
         .clang_arg(format!("-I{}/include", wlroots_build_path_str))
+        .clang_arg(format!("-I{}/protocol", wlroots_build_path_str))
         .allowlist_recursively(false)
         .allowlist_type("_?wlr_.*")
         .allowlist_function("_?wlr_.*")
@@ -41,7 +42,7 @@ fn main() {
         .allowlist_type("libseat")
         .allowlist_type("xkb_.*")
         .allowlist_type(".*va_list.*")
-        .allowlist_file(".*/wayland-server-protocol.h");
+        .allowlist_file(".*-protocol.h");
 
     for path in libs.all_include_paths() {
         builder = builder.clang_arg("-I").clang_arg(path.to_str().unwrap());
